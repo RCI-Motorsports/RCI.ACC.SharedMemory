@@ -8,7 +8,7 @@ namespace RCI.ACC.SharedMemory.Core.Structs;
 public struct Graphics
 {
   public int PacketId;
-  public Status Status;
+  public GameStatus GameStatus;
   public SessionType Session;
   [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
   public string CurrentTime;

@@ -1,6 +1,6 @@
 ﻿namespace RCI.ACC.SharedMemory.Core.Enums;
 
-public enum Status
+public enum GameStatus
 {
   Off = 0,
   Replay = 1,

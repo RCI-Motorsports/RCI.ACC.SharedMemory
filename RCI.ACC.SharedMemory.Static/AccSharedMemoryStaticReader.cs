@@ -8,7 +8,7 @@ namespace RCI.ACC.SharedMemory.Static;
 public class AccSharedMemoryStaticReader : EventArgs
 {
   private AccSharedMemoryStatus _accSharedMemoryStatus = AccSharedMemoryStatus.Disconnected;
-  private Status _status = Status.Off;
+  private GameStatus _gameStatus = GameStatus.Off;
   private readonly AccSharedMemoryConfig _config;
 
   private static TimeSpan RetryPeriod = TimeSpan.FromSeconds(2);
@@ -25,12 +25,23 @@ public class AccSharedMemoryStaticReader : EventArgs
   public delegate void PhysicsUpdatedHandler(Physics physics);
   public delegate void GraphicsUpdatedHandler(Graphics graphics);
   public delegate void StaticInfoUpdatedHandler(StaticInfo staticInfo);
-  public delegate void GameStatusChangedHandler(Status status);
+  public delegate void GameStatusChangedHandler(GameStatus gameStatus);
 
   public event PhysicsUpdatedHandler? PhysicsUpdated;
   public event GraphicsUpdatedHandler? GraphicsUpdated;
   public event StaticInfoUpdatedHandler? StaticInfoUpdated;
   public event GameStatusChangedHandler? GameStatusUpdated;
+
+  public bool IsRunning => _accSharedMemoryStatus == AccSharedMemoryStatus.Connected;
+
+  public string GameStatusString => _gameStatus switch
+  {
+    GameStatus.Off => "Off",
+    GameStatus.Live => "Live",
+    GameStatus.Pause => "Pause",
+    GameStatus.Replay => "Replay",
+    _ => throw new NotImplementedException(),
+  };
 
   public AccSharedMemoryStaticReader(AccSharedMemoryConfig? config = null)
   {
@@ -111,11 +122,11 @@ public class AccSharedMemoryStaticReader : EventArgs
 
     var graphics = _graphics.Read();
     GraphicsUpdated.Invoke(graphics);
-    if (_status != graphics.Status)
+    if (_gameStatus != graphics.GameStatus)
     {
-      _status = graphics.Status;
+      _gameStatus = graphics.GameStatus;
       if(GameStatusUpdated is not null)
-        GameStatusUpdated.Invoke(_status);
+        GameStatusUpdated.Invoke(_gameStatus);
     }
 
   }
