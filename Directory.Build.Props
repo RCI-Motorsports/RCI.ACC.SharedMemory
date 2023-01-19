@@ -1,0 +1,32 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IncludeSymbols>true</IncludeSymbols>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<DebugType>full</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Authors>stewieoO</Authors>
+		<Company>RCI Motorsport</Company>
+		<Product>RCI.ACC.SharedMemory</Product>
+		<Description>RCI.ACC.SharedMemory</Description>
+		<RepositoryUrl>https://github.com/RCI-Motorsports/RCI.ACC.SharedMemory</RepositoryUrl>
+		<PackageIcon>logo.png</PackageIcon>
+		<Version>1.18.12</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+</Project>
