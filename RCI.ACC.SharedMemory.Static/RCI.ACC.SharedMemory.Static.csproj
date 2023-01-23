@@ -1,7 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\RCI.ACC.SharedMemory.Core\RCI.ACC.SharedMemory.Core.csproj" />
-  </ItemGroup>
-
-</Project>

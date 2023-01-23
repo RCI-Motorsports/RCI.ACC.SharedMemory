@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\RCI.SharedMemory.Static\RCI.SharedMemory.Static.csproj" />
+  </ItemGroup>
+</Project>
