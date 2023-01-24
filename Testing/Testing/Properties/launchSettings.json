@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Testing": {
+      "commandName": "Project",
+      "workingDirectory": "../../..",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

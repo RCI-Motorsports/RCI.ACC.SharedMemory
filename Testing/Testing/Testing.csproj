@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Proxy\RCI.SharedMemory.Proxy.Host\RCI.SharedMemory.Proxy.Host.csproj" />
+    <ProjectReference Include="..\..\RCI.SharedMemory.ACC\RCI.SharedMemory.ACC.csproj" />
+    <ProjectReference Include="..\..\Service\RCI.SharedMemory.Service.ACC\RCI.SharedMemory.Service.ACC.csproj" />
+    <ProjectReference Include="..\..\Service\RCI.SharedMemory.Service.Local\RCI.SharedMemory.Service.Local.csproj" />
+    <ProjectReference Include="..\..\Service\RCI.SharedMemory.Service.Proxy\RCI.SharedMemory.Service.Proxy.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TestMappedFiles" />
+  </ItemGroup>
+
+</Project>

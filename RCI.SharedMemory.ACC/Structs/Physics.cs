@@ -3,7 +3,7 @@ using RCI.SharedMemory.Core.Attributes;
 
 namespace RCI.SharedMemory.ACC.Structs;
 
-[SharedMemoryFile(ACCSharedMemoryFileNames.Physics)]
+[SharedMemoryFile(SharedMemoryAccFileNames.Physics)]
 [StructLayout(LayoutKind.Sequential, Pack = 4, CharSet = CharSet.Unicode)]
 [Serializable]
 public struct Physics

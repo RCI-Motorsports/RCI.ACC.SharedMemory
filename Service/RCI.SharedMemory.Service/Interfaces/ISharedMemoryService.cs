@@ -1,8 +1,5 @@
-﻿using RCI.SharedMemory.ACC.Structs;
+﻿namespace RCI.SharedMemory.Service.Interfaces;
 
-namespace RCI.SharedMemory.Service.Interfaces;
-
-public interface ISharedMemoryService
+public interface ISharedMemoryService : IDisposable
 {
-  // public IObservable<Physics> Physics { get; }
 }

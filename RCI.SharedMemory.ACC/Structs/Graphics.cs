@@ -4,7 +4,7 @@ using RCI.SharedMemory.Core.Attributes;
 
 namespace RCI.SharedMemory.ACC.Structs;
 
-[SharedMemoryFile(ACCSharedMemoryFileNames.Graphics)]
+[SharedMemoryFile(SharedMemoryAccFileNames.Graphics)]
 [StructLayout(LayoutKind.Sequential, Pack = 4, CharSet = CharSet.Unicode)]
 [Serializable]
 public struct Graphics
@@ -12,12 +12,16 @@ public struct Graphics
   public int PacketId;
   public GameStatus GameStatus;
   public SessionType Session;
+
   [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
   public string CurrentTime;
+
   [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
   public string LastTime;
+
   [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
   public string BestTime;
+
   [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
   public string Split;
 
@@ -32,16 +36,21 @@ public struct Graphics
   public int CurrentSectorIndex;
   public int LastSectorTime;
   public int NumberOfLaps;
+
   [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
   public string TyreCompound;
+
   public float ReplayTimeMultiplier;
   public float NormalizedCarPosition;
 
   public int ActiveCars;
+
   [MarshalAs(UnmanagedType.ByValArray, SizeConst = 180)]
   public float[] CarCoordinates;
+
   [MarshalAs(UnmanagedType.ByValArray, SizeConst = 60)]
   public int[] CarId;
+
   public int PlayerCarID;
   public float PenaltyTime;
   public FlagType Flag;
@@ -70,18 +79,24 @@ public struct Graphics
   public int RainTyres;
   public int SessionIndex;
   public float UsedFuel;
+
   [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
   public string DeltaLapTime;
+
   public int IDeltaLapTime;
+
   [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
   public string EstimatedLapTime;
+
   public int IEstimatedLapTime;
   public int IsDeltaPositive;
   public int ISplit;
   public int IsValidLap;
   public float FuelEstimatedLaps;
+
   [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
   public string TrackStatus;
+
   public int MissingMandatoryPits;
   public float Clock;
   public int DirectionLightsLeft;

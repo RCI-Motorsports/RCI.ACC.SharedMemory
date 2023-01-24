@@ -3,7 +3,7 @@ using RCI.SharedMemory.Core.Attributes;
 
 namespace RCI.SharedMemory.ACC.Structs;
 
-[SharedMemoryFile(ACCSharedMemoryFileNames.StaticInfo)]
+[SharedMemoryFile(SharedMemoryAccFileNames.StaticInfo)]
 [StructLayout(LayoutKind.Sequential, Pack = 4, CharSet = CharSet.Unicode)]
 [Serializable]
 public struct StaticInfo
